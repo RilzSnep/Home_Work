@@ -5,23 +5,23 @@ from src.masks import account_mask, card_mask
 """
 
 
-def masks_of_cards(number_or_account: str) -> str:
+def masks_of_cards(number_card_or_bill_number: str) -> str:
     """
     Функция, чтобы отличить и замаскировать номер карты/счёта
     """
-    _account = number_or_account.split(" ")
-    if _account[0] == "Счет":
-        return f"{_account[0]} {account_mask(_account[-1])}"
+    number_card_or_bill_number_split = number_card_or_bill_number.split(" ")
+    if number_card_or_bill_number_split[0] == "Счет":
+        return f"{number_card_or_bill_number_split[0]} {account_mask(number_card_or_bill_number_split[-1])}"
     else:
-        return f'{" ".join(_account[:-1])} {card_mask(_account[-1])}'
+        return f'{" ".join(number_card_or_bill_number_split[:-1])} {card_mask(number_card_or_bill_number_split[-1])}'
 
 
-def datetime_and_date(date_time: str) -> str:
+def dates(date: str) -> str:
     """
     Функция, чтобы определить дату
     """
-    date_divided = date_time.split("T")[0].split("-")
-    return f"{date_divided[2]}.{date_divided[1]}.{date_divided[0]}"
+    date_split = date.split("T")[0].split("-")
+    return f"{date_split[2]}.{date_split[1]}.{date_split[0]}"
 
 
 def mask_phone_numbers(text: str) -> str:
