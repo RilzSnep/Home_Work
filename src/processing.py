@@ -2,6 +2,9 @@ from operator import itemgetter
 
 
 def sort_by_state(list_with_dictionary: list, values: str = "EXECUTED") -> list:
+    """
+    Функция, которая фильтрует список словарей
+    """
     list_executed = []
     for dictionary in list_with_dictionary:
         if dictionary["state"] == values:
@@ -10,5 +13,8 @@ def sort_by_state(list_with_dictionary: list, values: str = "EXECUTED") -> list:
 
 
 def sort_by_data(list_with_data_in_dictionary: list) -> list:
-    sorter = sorted(list_with_data_in_dictionary, key=itemgetter("date"), reverse=False)
+    """
+    Функция, которая сортирует список словарей по дате
+    """
+    sorter = sorted(list_with_data_in_dictionary, key=itemgetter("date"), reverse=True)
     return sorter
