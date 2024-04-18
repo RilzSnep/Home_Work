@@ -1,7 +1,7 @@
 from operator import itemgetter
 
 
-def sort_by_state(list_with_dictionary: list, values: str = "EXECUTED") -> list:
+def filter_by_state(list_with_dictionary: list, values: str = "EXECUTED") -> list:
     """
     Функция, которая фильтрует список словарей
     """
