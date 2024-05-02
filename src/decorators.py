@@ -1,10 +1,21 @@
 from datetime import datetime
-from typing import Callable, Any, Union, Optional
+from typing import Any, Callable, Optional, Union
 
 
 def log(filename: Optional[str] = None) -> Callable:
+    """
+    Декоратор, логирующий вызов функции и ее результат.
+    """
+
     def decorator(func: Callable) -> Callable:
+        """
+        Внутренняя функция декоратора, которая обертывает декорируемую функцию.
+        """
+
         def wrapper(*args: Any, **kwargs: Any) -> Union[str, Any]:
+            """
+            Выполняет логирование до и после вызова декорируемой функции.
+            """
             start = datetime.now()
             try:
                 result = func(*args, *kwargs)
@@ -18,12 +29,17 @@ def log(filename: Optional[str] = None) -> Callable:
             if status == "error":
                 raise
             return result
+
         return wrapper
+
     return decorator
 
 
 @log(filename="mylog.txt")
 def my_function(x: int, y: int) -> int:
+    """
+    Пример функции, которая складывает два числа.
+    """
     return x + y
 
 

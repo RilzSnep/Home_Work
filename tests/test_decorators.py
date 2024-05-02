@@ -1,5 +1,4 @@
 from src.decorators import log
-import pytest
 
 
 @log()
@@ -10,5 +9,3 @@ def test_function_success() -> str:
 @log(filename="test_log.txt")
 def test_function_success_file() -> str:
     return "success"
-
-
