@@ -1,0 +1,3 @@
+2024-05-02 15:02:29.381837 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 15:02:29.382837 test_function_fail_file ok (0:00:00). Inputs: (), {}
+2024-05-02 15:02:39.500522 test_function_success_file ok (0:00:00). Inputs: (), {}

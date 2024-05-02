@@ -1,0 +1,13 @@
+2024-05-02 14:02:06.033644 test_function_error_file error (0:00:00). Inputs: (), {}
+2024-05-02 14:02:21.808916 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 14:02:21.836915 test_function_error_file error (0:00:00). Inputs: (), {}
+2024-05-02 14:02:26.784450 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 14:04:47.365226 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 14:04:47.393227 test_function_error_file error (0:00:00). Inputs: (), {}
+2024-05-02 14:05:38.107858 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 14:05:38.108858 test_function_fail_file error (0:00:00). Inputs: (), {}
+2024-05-02 14:08:08.998857 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 14:08:08.999858 test_function_fail_file ok (0:00:00). Inputs: (), {}
+2024-05-02 15:02:35.807919 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 15:19:40.800730 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-02 15:19:49.980537 test_function_success_file ok (0:00:00). Inputs: (), {}
