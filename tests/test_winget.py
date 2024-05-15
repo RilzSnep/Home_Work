@@ -19,14 +19,3 @@ def test_mask_phone_numbers() -> None:
 def test_masks_of_cards() -> None:
     assert masks_of_cards("Visa Platinum 7000792289606361") == "Visa Platinum 7000 79** **** 6361"
     assert masks_of_cards("Счет 73654108430135874305") == "Счет **4305"
-
-
-# cards_number_input = input("Введите номер карты/счета:")
-# print(masks_of_cards(cards_number_input))
-#
-# data_input = input("Введите дату:")
-# print(dates(data_input))
-#
-# input_texts = input("Как с вами связаться? :")
-# masked_text = mask_phone_numbers(input_texts)
-# print(masked_text)

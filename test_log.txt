@@ -1,3 +1,7 @@
-2024-05-02 15:02:29.381837 test_function_success_file ok (0:00:00). Inputs: (), {}
-2024-05-02 15:02:29.382837 test_function_fail_file ok (0:00:00). Inputs: (), {}
-2024-05-02 15:02:39.500522 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:05:46.709374 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:31:56.264761 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:32:22.573258 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:33:05.216507 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:34:07.849921 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:36:00.664996 test_function_success_file ok (0:00:00). Inputs: (), {}
+2024-05-15 11:37:00.225087 test_function_success_file ok (0:00:00). Inputs: (), {}
