@@ -33,3 +33,4 @@
 # API_KEY = os.getenv('API_KEY')
 # data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()
 # dollar_rate = float(data['Valute']['USD']['Value'])
+# print(dollar_rate)
