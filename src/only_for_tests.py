@@ -26,9 +26,7 @@
 # print(rate)
 # import os
 # from dotenv import load_dotenv
-#
 # load_dotenv()
-#
 # # Получение значения переменной GITHUB_TOKEN из .env-файла
 # API_KEY = os.getenv('API_KEY')
 # data = requests.get('https://www.cbr-xml-daily.ru/daily_json.js').json()

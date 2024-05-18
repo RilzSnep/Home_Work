@@ -1,7 +1,11 @@
 import unittest
+
+# import os
+# from pathlib import Path
 from typing import Dict
 from unittest.mock import Mock, patch
-from src.utils import get_amount, get_usd_rub_rate
+
+from src.utils import get_amount, get_usd_rub_rate, load_transactions
 
 
 class TestFunctions(unittest.TestCase):
@@ -14,6 +18,9 @@ class TestFunctions(unittest.TestCase):
     def test_get_amount(self) -> None:
         dictionary: Dict = {"operationAmount": {"currency": {"code": "RUB"}, "amount": "100.00"}}
         self.assertEqual(get_amount(dictionary), 100.00)
+
+    def test_load_transactions(self) -> None:
+        assert load_transactions("../tests/test_operation.json") == [1, 2, 3, 4, 5]
 
 
 if __name__ == "__main__":
