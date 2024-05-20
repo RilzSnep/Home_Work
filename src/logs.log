@@ -1,0 +1,4 @@
+2024-05-20 15:24:53,150 - src.logger - INFO - b'1USD = 90.9873RUB'
+2024-05-20 15:24:53,261 - src.logger - INFO - b'1USD = 90.9873RUB'
+2024-05-20 15:24:53,262 - src.logger - INFO - return the amount from dictionary USD
+2024-05-20 15:24:53,263 - src.logger - INFO - b'return the transaction'
