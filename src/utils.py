@@ -3,7 +3,6 @@ import os
 
 import requests
 from dotenv import load_dotenv
-
 from src.logger import logger_setup
 
 load_dotenv()
