@@ -3,6 +3,7 @@ import os
 
 import requests
 from dotenv import load_dotenv
+
 from src.logger import logger_setup
 
 load_dotenv()
@@ -72,6 +73,5 @@ valve = {
 }
 
 
-get_usd_rub_rate("USD", 10)
-get_amount(valve)
-load_transactions("../data/operations.json")
+# get_usd_rub_rate("USD", 10)
+# get_amount(valve)

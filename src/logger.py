@@ -1,10 +1,10 @@
 import logging
-import os
 from logging import Logger
 
 
 def logger_setup() -> Logger:
-    os.remove("logs.log")
+    with open("logs.log", "r+") as f:
+        f.truncate(0)
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")

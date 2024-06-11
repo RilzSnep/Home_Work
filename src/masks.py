@@ -3,27 +3,42 @@ from src.logger import logger_setup
 logger = logger_setup()
 
 
-def account_mask(num_account: str) -> str:
-    """Получает номер счета и выводит его под маской"""
-    if len(num_account) == 16:
-        mask_account = num_account[-4:]
-        logger.info("Account was mask")
-        return f"**{mask_account}"
+def card_mask(card_number: str) -> str:
+    """Функция принимает на вход номер карты и возвращает ее маску"""
+    if len(card_number) == 16:
+        masked_number = f"{card_number[:4]} {card_number[4:6]}** **** {card_number[-4:]}"
+        logger.info("Function mask_credit_card_number completed successfully")
+        return masked_number
     else:
-        logger.error("Account was not mask")
-        return num_account
+        logger.error("With the function mask_credit_card_number something is wrong")
+    return card_number
 
 
-def card_mask(cards_mask: str) -> str:
-    """Получает номер карты и выводит его под маской"""
-    if len(cards_mask) == 21:
-        mask_card = f"{cards_mask[:4]} {cards_mask[4:6]}** **** {cards_mask[-4:]}"
-        logger.info("Card was mask")
-        return mask_card
+def account_mask(account_number: str) -> str:
+    """Функция принимает на вход номер счёта и возвращает ее маску"""
+    if len(account_number) == 20:
+        masked_number = f"**{account_number[-4:]}"
+        logger.info("Function mask_account_number completed successfully")
+        return masked_number
     else:
-        logger.error("Card was not mask")
-        return cards_mask
+        logger.error("With the function mask_account_number something is wrong")
+    return account_number
 
 
-account_mask("1234567890123456")
-card_mask("12345678901234567890123456789012")
+def mask_for_all(masked_number: str) -> str:
+    """Функция принимает на вход номер карты и возвращает ее маску"""
+    masker = masked_number.split(" ")
+    msak = masker[-1]
+    if len(msak) == 16:
+        masked_number = f"{msak[:4]} {msak[4:6]}** **** {msak[-4:]}"
+        logger.info("Function mask_credit_card_number completed successfully")
+        return f"{' '.join(masker[:-1])} {masked_number}"
+    elif len(msak) == 20:
+        masked_number = f"**{msak[-4:]}"
+        logger.info("Function mask_account_number completed successfully")
+        return f"{' '.join(masker[:-1])} {masked_number}"
+    else:
+        return masked_number
+
+
+# print(mask_for_all("Счет 30377212495530283001"))

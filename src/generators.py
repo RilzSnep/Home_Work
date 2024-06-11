@@ -49,7 +49,26 @@ transactions = [
 ]
 
 
-def filter_by_currency(list_of_dictionaries: List[Dict[str, Any]], code: str) -> Iterator[Dict[str, Any]]:
+def filter_by_currency_pop(list_with_currency: Any) -> Any:
+    """
+    Функция, которая выводит id
+    """
+    pos = []
+    for i in list_with_currency:
+        if i["operationAmount"]["currency"]["code"] == "RUB":
+            pos.append(i)
+    return pos
+
+
+def filter_by_currency_csv(list_with_currency: Any) -> Any:
+    pos = []
+    for i in list_with_currency:
+        if i["currency_code"] == "RUB":
+            pos.append(i)
+    return pos
+
+
+def filter_by_currency(list_of_dictionaries: List[Dict], code: str) -> Iterator[Dict[str, Any]]:
     """
     Функция, которая выводит id
     """

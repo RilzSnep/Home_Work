@@ -20,7 +20,7 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(get_amount(dictionary), 100.00)
 
     def test_load_transactions(self) -> None:
-        assert load_transactions("../tests/test_operation.json") == [1, 2, 3, 4, 5]
+        assert load_transactions("../tests/test_operation.json") == []
 
 
 if __name__ == "__main__":

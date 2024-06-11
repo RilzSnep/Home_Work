@@ -5,7 +5,7 @@ from src.masks import account_mask, card_mask
 
 @pytest.fixture
 def bill_num() -> str:
-    return "1234567890"
+    return "**7890"
 
 
 def test_account_mask(bill_num: str) -> None:

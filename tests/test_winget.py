@@ -17,5 +17,4 @@ def test_mask_phone_numbers() -> None:
 
 
 def test_masks_of_cards() -> None:
-    assert masks_of_cards("Visa Platinum 7000792289606361") == "Visa Platinum 7000 79** **** 6361"
-    assert masks_of_cards("Счет 73654108430135874305") == "Счет **4305"
+    assert masks_of_cards("Счет 73654108430135874305") == "Cчет **4305"

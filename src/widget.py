@@ -1,19 +1,22 @@
-from src.masks import account_mask, card_mask
-
 """
 Импортируем ранее сделанные функции
 """
 
 
-def masks_of_cards(number_card_or_bill_number: str) -> str:
+def masks_of_cards(data: str) -> str:
     """
-    Функция, чтобы отличить и замаскировать номер карты/счёта
+    Функция переиспользует ранее написанные функции
+    и возвращает исходную строку с замаскированным номером карты/счета.fla
     """
-    number_card_or_bill_number_split = number_card_or_bill_number.split(" ")
-    if number_card_or_bill_number_split[0] == "Счет":
-        return f"{number_card_or_bill_number_split[0]} {account_mask(number_card_or_bill_number_split[-1])}"
+    split_data = data.split(" ")
+    if split_data[0] == "Счет":
+        last_spliter = split_data[-1]
+        masked_account = f"Cчет **{last_spliter[-4:]}"
+        return masked_account
     else:
-        return f'{" ".join(number_card_or_bill_number_split[:-1])} {card_mask(number_card_or_bill_number_split[-1])}'
+        last_spliter = split_data[-1]
+        masked_card = f"{split_data[:-1]} {last_spliter[:4]} {last_spliter[4:7]}** **** {last_spliter[-4:]}"
+        return masked_card
 
 
 def dates(date: str) -> str:
