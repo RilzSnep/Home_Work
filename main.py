@@ -1,6 +1,5 @@
-import re
 from typing import Any
-
+from src.filter_descripions import filter_transactions_by_description
 from src.csv_and_xlsx import read_csv, read_xlsx
 from src.generators import filter_by_currency_csv, filter_by_currency_pop
 from src.masks import mask_for_all
@@ -16,6 +15,9 @@ user_answer_1 = input()
 
 
 def check_answer_1(user_answer: Any) -> Any:
+    """
+    Проверяет введенный пользователем ответ на первый вопрос и переводят их в int.
+    """
     while user_answer not in ("1", "2", "3"):
         user_answer = input("Нет такого варианта ответа, попробуйте снова(1, 2, 3): ")
         user_answer = user_answer
@@ -24,6 +26,9 @@ def check_answer_1(user_answer: Any) -> Any:
 
 
 def for_answer_2() -> Any:
+    """
+    функия для считывания json, csv , xlsx файлов
+    """
     if user_answer_1 == "1":
         transactions = load_transactions("data/operations.json")
     elif user_answer_1 == "2":
@@ -40,6 +45,9 @@ def for_answer_2() -> Any:
 
 
 def for_answers_3_4(transactions_status: Any) -> Any:
+    """
+    Сортировка по дате
+    """
     user_answer_3 = input("Отсортировать операции по дате? Да/Нет \n").upper()
     while user_answer_3 not in ("НЕТ", "ДА"):
         user_answer_3 = input("Нет такого варианта ответа, попробуйте снова (Да/Нет): ")
@@ -58,22 +66,10 @@ def for_answers_3_4(transactions_status: Any) -> Any:
     return transactions_status
 
 
-def filter_transactions_by_description(transactions: Any) -> Any:
-    filtered_transactions = []
-    uns = input("Отсортировать по опр слову? \n").upper()
-    while uns not in ("ДА", "НЕТ"):
-        uns = input("Нет такого варианта ответа, попробуйте снова (ДА/НЕТ): ")
-        uns = uns.upper()
-    if uns == "ДА":
-        search_string = input("Введите слово: ")
-        for transaction in transactions:
-            if re.search(search_string, transaction["description"], re.IGNORECASE):
-                filtered_transactions.append(transaction)
-        print(f"Операции отфильтрованы по описанию {search_string}")
-    return filtered_transactions
-
-
 def for_answer_5(user_answer: Any, transactions_status: Any) -> Any:
+    """
+    Сортировка по руб. транзакциям
+    """
     user_answer_5 = input("Выводить только рублевые тразакции? Да/Нет\n").upper()
     while user_answer_5 not in ("НЕТ", "ДА"):
         user_answer_5 = input("Нет такого варианта ответа, попробуйте снова (Да/Нет):")
