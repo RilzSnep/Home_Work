@@ -1,6 +1,7 @@
 from typing import Any
-from src.filter_descripions import filter_transactions_by_description
+
 from src.csv_and_xlsx import read_csv, read_xlsx
+from src.filter_descripions import filter_transactions_by_description
 from src.generators import filter_by_currency_csv, filter_by_currency_pop
 from src.masks import mask_for_all
 from src.processing import filter_by_state, sort_by_data

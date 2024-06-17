@@ -1,5 +1,6 @@
 import re
-from typing import Any
+from collections import Counter
+from typing import Any, Dict, List
 
 
 def filter_transactions_by_description(transactions: Any) -> Any:
@@ -20,3 +21,14 @@ def filter_transactions_by_description(transactions: Any) -> Any:
         return filtered_transactions
     else:
         return transactions
+
+
+def categorize_transactions(transactions: List[Dict[str, Any]], categories_2: Dict[str, List[str]]) -> Dict[str, int]:
+    counts_category: Dict[str, int] = Counter()
+    for transaction in transactions:
+        if "description" in transaction:
+            for cat, ke in categories_2.items():
+                if any(keyword.lower() in transaction["description"].lower() for keyword in ke):
+                    counts_category[cat] += 1
+                    break
+    return dict(counts_category)
