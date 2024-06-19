@@ -3,22 +3,27 @@ from collections import Counter
 from typing import Any, Dict, List
 
 
-def filter_transactions_by_description(transactions: Any) -> Any:
+def filter_by_description(transactions: List[Dict], massage: str) -> List[Dict]:
+    filtered_transactions = []
+    for transaction in transactions:
+        if re.search(massage, transaction["description"], re.IGNORECASE):
+            filtered_transactions.append(transaction)
+    print(f"Операции отфильтрованы по описанию {massage}")
+
+    return filtered_transactions
+
+
+def filter_transactions_by_description(transactions: List[Dict]) -> Dict | List:
     """
     Сортировка по опр. слову
     """
-    filtered_transactions = []
     uns = input("Отсортировать по опр слову? \n").upper()
     while uns not in ("ДА", "НЕТ"):
         uns = input("Нет такого варианта ответа, попробуйте снова (ДА/НЕТ): ")
         uns = uns.upper()
     if uns == "ДА":
-        search_string = input("Введите слово: ")
-        for transaction in transactions:
-            if re.search(search_string, transaction["description"], re.IGNORECASE):
-                filtered_transactions.append(transaction)
-        print(f"Операции отфильтрованы по описанию {search_string}")
-        return filtered_transactions
+        return filter_by_description(transactions, input("Введите слово: "))
+
     else:
         return transactions
 

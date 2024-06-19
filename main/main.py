@@ -31,11 +31,11 @@ def for_answer_2() -> Any:
     функия для считывания json, csv , xlsx файлов
     """
     if user_answer_1 == "1":
-        transactions = load_transactions("data/operations.json")
+        transactions = load_transactions("../data/operations.json")
     elif user_answer_1 == "2":
-        transactions = read_csv("data/transactions.csv")
+        transactions = read_csv("../data/transactions.csv")
     else:
-        transactions = read_xlsx("data/transactions_excel.xlsx")
+        transactions = read_xlsx("../data/transactions_excel.xlsx")
     user_answer_2 = input("Введите статус транзакции (EXECUTED, CANCELED, PENDING): ").upper()
     while user_answer_2 not in ("EXECUTED", "CANCELED", "PENDING"):
         user_answer_2 = input("Вы ввели некорректный статус транзакции, попробуйте снова(EXECUTED, CANCELED, PENDING): ")
@@ -84,7 +84,7 @@ def for_answer_5(user_answer: Any, transactions_status: Any) -> Any:
         print("Операции отфильтрованы по рублевым транзакциям\n")
 
     print("Распечатываю итоговый список транзакций...\n")
-    print(f"Всего банковских операций в выборке: {len(transactions_status)}")
+    print(f"Всего банковских операций в выборке: {len(transactions_status)}\n")
     if user_answer == "1":
         for i in transactions_status:
             if i["description"] == "Открытие вклада":

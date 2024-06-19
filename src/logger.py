@@ -3,7 +3,7 @@ from logging import Logger
 
 
 def logger_setup() -> Logger:
-    with open("logs.log", "r+") as f:
+    with open("../src/logs.log", "r+") as f:
         f.truncate(0)
     logger = logging.getLogger(__name__)
     logger.setLevel(logging.DEBUG)
